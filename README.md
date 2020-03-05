@@ -1,44 +1,43 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Reimbursement System
 
-## Available Scripts
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
-In the project directory, you can run:
+I created an expense reimbursement system UI interface that will manage the process of reimbursing employees for expenses incurred while on company time. All employees in the company can login and submit requests for reimbursement and view their past tickets and pending requests. Finance managers can log in and view all reimbursement requests and past history for all employees in the company. Finance managers are authorized to approve and deny requests for expense reimbursement. This project will connect to my Reimbursement API.
 
-### `yarn start`
+### Technologies Used
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* React- an open-source JavaScript library that is used for building user interfaces
+* VSCode - awesome web-based text editor
+* Reactstrap/Bootstrap - great UI boilerplate for modern web apps
+* Node - evented I/O for the backend
+* Express - fast node.js network app framework 
+* Trello - tool for project management and task management
+* AWS EC2 & S3 - Used for configuration and project deployment 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Installation Steps
 
-### `yarn test`
+Install the dependencies and devDependencies and start the server.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+$ cd ReimbursementSystemUI
+$ npx create-react-app reimburse --typescript
+$ npm install react-router react-router-dom @types/react-router @types/react-router-dom
+$ npm install bootstrap reactstrap @types/reactstrap
+$ npm start
+```
 
-### `yarn build`
+### User Stories 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ - As a User, Admin, or Finance Manager I want to be able to Login so that I can submit a reimbursement request.
+ - As a Finance Manager, I want to review all user information so that I know who has submitted a reimbursement request.
+ - As a Finance Manager, I want to have the ability to review a specific user so that I don't have to look through an entire list of users
+ - As a Admin, I want to update a user's account information so that I can keep up to date with changes made within the system
+ - As a Finance Manager, I want to find the status of a reimbursement request so that I can see what request has been Approved, Denied, or Pended
+ - As a Finance Manager, I want to find a reimbursements based on a specific user so that I can filter out which reimbursement request I would like to review
+ - As a Admin or User, I want to review all of my own reimbursement requests made so that I am aware of its status
+ - As a Finance Manager, I want to update a reimbursement request so that I can either Approve, Deny, or keep it as pending.
+ 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Unsolved Problems
+- Using JSON Web Tokens (JWTs) instead of Session Storage
+- Creating a User by adding a registration form
