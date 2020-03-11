@@ -2,9 +2,10 @@ import React from "react";
 
 const Input = (props: {
   name: string | undefined;
-  label: React.ReactNode; //a light, stateless, immutable, virtual representation of a DOM node.
+  label: React.ReactNode;
   value: string | number | string[] | undefined;
   onChange: ((event: React.ChangeEvent<HTMLInputElement>) => void) | undefined;
+  error: any;
 }) => {
   return (
     <div className="form-row">
@@ -19,6 +20,7 @@ const Input = (props: {
           type="text"
           className="form-control"
         />
+        {props.error && <div className="alert alert-danger">{props.error}</div>}
       </div>
     </div>
   );
