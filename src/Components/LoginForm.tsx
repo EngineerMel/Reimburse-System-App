@@ -1,24 +1,52 @@
-import React from "react";
+import React, { Component } from "react";
 
-export interface LoginFormProps {}
+class LoginForm extends Component {
+  state = {
+    account: { username: "", password: "" }
+  };
 
-export interface LoginFormState {}
+  //handles submit and prevents any page reload
+  handleSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+  };
 
-class LoginForm extends React.Component<LoginFormProps, LoginFormState> {
+  handleChange = (e: { currentTarget: { value: string; name: string } }) => {
+    const account: any = { ...this.state.account };
+    account[e.currentTarget.name] = e.currentTarget.value;
+    this.setState({ account });
+  };
+
   render() {
+    const { account } = this.state;
     return (
       <React.Fragment>
-        <form>
+        <h1>Login</h1>
+        <form className="loginform" onSubmit={this.handleSubmit}>
           <div className="form-row">
             <div className="col-7">
               <label htmlFor="username">Username</label>
-              <input id="username" type="text" className="form-control" />
+              <input
+                autoFocus
+                value={account.username}
+                onChange={this.handleChange}
+                name="username"
+                id="username"
+                type="text"
+                className="form-control"
+              />
             </div>
           </div>
           <div className="form-row">
             <div className="col-7">
               <label htmlFor="password">Password</label>
-              <input id="password" type="password" className="form-control" />
+              <input
+                value={account.password}
+                onChange={this.handleChange}
+                id="password"
+                name="password"
+                type="password"
+                className="form-control"
+              />
             </div>
           </div>
           <button className="btn btn-primary">Login </button>
