@@ -2,7 +2,7 @@ import React from "react";
 
 const Input = (props: {
   name: string | undefined;
-  label: React.ReactNode;
+  label: React.ReactNode; //a light, stateless, immutable, virtual representation of a DOM node.
   value: string | number | string[] | undefined;
   onChange: ((event: React.ChangeEvent<HTMLInputElement>) => void) | undefined;
 }) => {
