@@ -7,7 +7,7 @@ import ViewMyForms from "./Components/ViewMyForms";
 import Profile from "./Components/Profile";
 import NotFound from "./Components/NotFound";
 import NavBar from "./Components/NavBar";
-import DashBoard from "./Components/admin/DashBoard";
+import DashBoard from "./Components/NestedRoutes/DashBoard";
 import "./App.css";
 
 class App extends Component {
